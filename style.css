@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  background-color: #cccccc;
+  padding: 10px;
+  /*height: 1500px;*/
+
+  display: flex;
+  /*
+  flex-direction: row; 1 2 3 4 5 แนวตั้ง
+  flex-direction: column;  1 2 3 4 5 แนวยาว
+  flex-direction: column-reverse; 5 4 3 2 1 แนวยาว
+ */
+  flex-direction: row;
+  /*
+  justify-content: center; =>1-2-3-4-5<=
+  justify-content: space-between; 1<==>2<==>3<==>4<==>5
+  justify-content: space-around; =>1<==>2<==>3<==>4<==>5<=
+  justify-content: space-evenly; <==>1<==>2<==>3<==>4<==>5<==>
+  justify-content: flex-end; 1 2 3 4 5 ชิดขวา
+  justify-content: flex-start; 1 2 3 4 5 ชิดซ้าย
+ */
+  justify-content: center;
+  /* if flex-direction: row;
+  align-items: center; 1 2 3 4 5 ชิดตรงกลาง
+  align-items: flex-start; 1 2 3 4 5 ชิดบน .i2
+  align-items: flex-end; 1 2 3 4 5 ชิดล่าง .i2
+  align-items: stretch; 1 2 3 4 5 ยืดตัวเองเพื่อให้ชิดบน และ ขอบล่าง
+  align-items: baseline; 1 2 3 4 5 ยึดฐานตัวอักษร ชิดตรงกลาง .i4
+    if flex-direction: column;
+  align-items: center; 1 2 3 4 5 ชิดตรงกลาง 1บน 5ล่าง
+  align-items: flex-start; 1 2 3 4 5 ชิดซ้าย 1บน 5ล่าง
+  align-items: flex-end; 1 2 3 4 5 ชิดขวา 1บน 5ล่าง
+  */
+  align-items: center;
+  /* *พื้นที่ถูกปรับลงบรรทัดใหม่ */
+  flex-wrap: wrap;
+  /*
+  align-content: center; ทื้นที่ภาพรวมถูกจัดตรงกลาง
+  align-content: flex-start; ทื้นที่ภาพรวมถูกจัดชิดบน 
+  align-content: flex-end; ทื้นที่ภาพรวมถูกจัดชิดล่าง
+  align-content: space-between; ทื้นที่ภาพรวมถูกจัดชิดบน ชิดล่าง 
+  align-content: space-around; ทื้นที่ภาพรวมถูกจัดชิดคอบรอบชิดบน ชิดล่าง  
+  align-content: stretch; ทื้นที่ภาพรวมถูกจัดชิดคอบรอบ ระยะขอบเท่าๆกัน
+ */
+  align-content: stretch;
+}
+.item {
+  background-color: #f1425d;
+  padding: 30px;
+  margin: 5px;
+  color: #ffffff;
+  font-size: 40px;
+  /* *พื้นที่โดยรอบขยาบใหญ่ขึ้น */
+  flex-grow: 1;
+}
+.i2 {
+  height: 200px;
+  /* *พื้นที่โดยรอบขยาบใหญ่ขึ้น โดยเฉพาะ .i2 */
+  flex-grow: 3;
+  /* *พื้นที่ขยายไปทางขวา 20% */
+  flex-basis: 200px;
+  flex: 0 1 200px;
+  /* *พื้นที่ถูกยึดติดไม่ขยับ*/
+  flex-shrink: 0;
+}
+.i3 {
+  order: 1;
+  /* *พื้นที่ขยายไปทางขวา */
+  flex: 1;
+}
+.i4 {
+  /*font-size: 90px;*/
+  /*
+ align-self: flex-start; 4 ชิดบน 
+ align-self: flex-end; 4 ชิดล่าง 
+ align-items: stretch; 4 ยืดตัวเองเพื่อให้ชิดบน และ ขอบล่าง
+ */
+  align-self: flex-end;
+  /* *จัดอันดับก่อนหลัง -1 0 0 0 1 or -2 -1 0 1 2 */
+  order: -1;
+}
